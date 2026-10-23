@@ -1,0 +1,28 @@
+GEOSKICIRKA MAP – KOMPAJLIRANJE APK-a BEZ ANDROID STUDIO PROGRAMA
+
+Ovaj paket je izvorni kod Android aplikacije, ne gotov APK.
+Build se izvrsava u oblaku preko GitHub Actions i zahteva GitHub nalog.
+
+1. Na github.com napravi novi repozitorijum (Create repository), bez README fajla.
+2. Otpakuj ovaj ZIP na uredjaju. U repozitorijum otpremi SADRZAJ fascikle
+   GeoSkicirka_MAP_Android_CloudBuild_0_1 (build.gradle, settings.gradle,
+   app/ i .github/). Ne otpremaj samo ZIP kao jedan fajl.
+   Vazno: .github je skrivena fascikla. Ako je file manager sakrije,
+   ukljuci prikaz skrivenih fajlova ili je dodaj posebno.
+3. Repo -> Actions -> Napravi GeoSkicirka MAP APK -> Run workflow.
+   Pokretanje se desava i automatski pri push-u na main granu.
+4. Kada build uspe, otvori Actions -> odgovarajuci run -> Artifacts ->
+   GeoSkicirka-MAP-debug-APK. Preuzmi i raspakuj artefakt.
+5. Na telefonu instaliraj app-debug.apk (Android moze traziti dozvolu za
+   instaliranje aplikacija iz tog izvora). Prilikom prvog GPS ON odobri
+   lokaciju. Karte traze internet, crtanje i GPS mogu raditi bez interneta.
+
+Ne otpremaj prave terenske skice, JSON radova ili GPS TXT na GitHub.
+
+NAPOMENE:
+- Ovo je probna, debug verzija koja NIJE testirana na telefonu.
+- Build moze prijaviti gresku i u tom slucaju potreban je log iz Actions.
+- Besplatno za standardne GitHub-hosted runnere u javnim repozitorijumima.
+  Privatni repozitorijumi imaju kvote i moguce troskove nakon njih.
+- Ne distribuirao javno APK sa pouzdanjem kao da je produkciono potpisan.
+- Originalna GeoSkicirka 0.7 ostaje neizmenjena.
